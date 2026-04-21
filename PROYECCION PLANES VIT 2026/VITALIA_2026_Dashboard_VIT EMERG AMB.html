@@ -118,13 +118,13 @@
 
 <div class="top-bar">
   <h1>Vitalia 2026 — Dashboard de Suscripciones</h1>
-  <span>Clínica Foianini &nbsp;·&nbsp; Actualizado: <span id="fecha-hoy">20 de abril de 2026</span></span>
+  <span>Clínica Foianini &nbsp;·&nbsp; Actualizado: <span id="fecha-hoy">21 de abril de 2026</span></span>
 </div>
 <div class="save-bar">
   <button class="btn-save" onclick="guardarDatos()">Guardar cambios</button>
   <button class="btn-reset" onclick="resetearDatos()">Restaurar valores originales</button>
   <button class="btn-save" onclick="exportarHTML()" style="background:#1d6fa4;box-shadow:0 4px 14px rgba(29,111,164,.35);">⬇ Exportar para GitHub</button>
-  <span class="save-status ok" id="save-status" style="font-weight: 700;">Guardado el 20 de abril de 2026, 09:00 p.&nbsp;m.</span>
+  <span class="save-status ok" id="save-status" style="font-weight: 700;">Guardado el 21 de abril de 2026, 08:39 a.&nbsp;m.</span>
 </div>
 
 <div class="container">
@@ -201,10 +201,10 @@
     </tr><tr class="real-row">
       <td>Abril <span class="badge b-real">real</span></td>
       <td><input class="inp vis-inp is-real" id="ve-3" type="number" min="0" max="99999" value="823"></td>
-      <td><input class="inp sus-inp is-real" id="se-3" type="number" min="0" max="9999" value="187"></td>
+      <td><input class="inp sus-inp is-real" id="se-3" type="number" min="0" max="9999" value="188"></td>
       <td id="cve-3" style="color:#555">22.8%</td>
       <td><input class="inp vis-inp is-real" id="va-3" type="number" min="0" max="99999" value="2164"></td>
-      <td><input class="inp sus-inp is-real" id="sa-3" type="number" min="0" max="9999" value="334"></td>
+      <td><input class="inp sus-inp is-real" id="sa-3" type="number" min="0" max="9999" value="343"></td>
       <td id="cva-3" style="color:#555">15.9%</td>
       <td id="tt-3" style="font-weight:700">531</td>
       <td id="ti-3" style="color:#555">52.569</td>
@@ -435,7 +435,7 @@
     <div class="chart-card">
       <div class="chart-title"><span class="dot dot-e"></span> Vitalia + Emergencias — Suscripciones por mes</div>
       <div class="chart-sub">Azul oscuro = datos reales &nbsp;·&nbsp; Azul claro = proyección &nbsp;·&nbsp; Línea roja = meta mensual promedio</div>
-      <div class="chart-wrap"><canvas id="chart-emerg" style="box-sizing: border-box; display: block; height: 280px; width: 1090px;" width="1090" height="280"></canvas></div>
+      <div class="chart-wrap"><canvas id="chart-emerg" width="1090" height="280" style="display: block; box-sizing: border-box; height: 280px; width: 1090px;"></canvas></div>
       <div class="chart-legend">
         <div class="cleg-item"><div class="cleg-dot" style="background:#185FA5"></div>Reales</div>
         <div class="cleg-item"><div class="cleg-dot" style="background:#90CAF9;border:1px dashed #185FA5"></div>Proyectados</div>
@@ -447,7 +447,7 @@
     <div class="chart-card">
       <div class="chart-title"><span class="dot dot-a"></span> Vitalia + Ambulatorio — Suscripciones por mes</div>
       <div class="chart-sub">Verde oscuro = datos reales &nbsp;·&nbsp; Verde claro = proyección &nbsp;·&nbsp; Línea naranja = meta mensual promedio</div>
-      <div class="chart-wrap"><canvas id="chart-amb" style="box-sizing: border-box; display: block; height: 280px; width: 1090px;" width="1090" height="280"></canvas></div>
+      <div class="chart-wrap"><canvas id="chart-amb" width="1090" height="280" style="display: block; box-sizing: border-box; height: 280px; width: 1090px;"></canvas></div>
       <div class="chart-legend">
         <div class="cleg-item"><div class="cleg-dot" style="background:#2E7D32"></div>Reales</div>
         <div class="cleg-item"><div class="cleg-dot" style="background:#A5D6A7;border:1px dashed #2E7D32"></div>Proyectados</div>
@@ -459,7 +459,7 @@
     <div class="chart-card">
       <div class="chart-title">📊 Comparativo mensual — Emergencias vs Ambulatorio</div>
       <div class="chart-sub">Barras apiladas por mes &nbsp;·&nbsp; Línea morada = total combinado mensual</div>
-      <div class="chart-wrap" style="height:310px"><canvas id="chart-combo" style="box-sizing: border-box; display: block; height: 310px; width: 1090px;" width="1090" height="310"></canvas></div>
+      <div class="chart-wrap" style="height:310px"><canvas id="chart-combo" width="1090" height="310" style="display: block; box-sizing: border-box; height: 310px; width: 1090px;"></canvas></div>
       <div class="chart-legend">
         <div class="cleg-item"><div class="cleg-dot" style="background:#185FA5"></div>Emergencias</div>
         <div class="cleg-item"><div class="cleg-dot" style="background:#2E7D32"></div>Ambulatorio</div>
@@ -475,7 +475,7 @@
 
 <script>
 const META=17000,PRICE=99,STORAGE_KEY='vitalia2026_v1';
-const PRELOADED_DATA={"ve":[906,1639,1530,823,1186,1064,990,1100,1153,1066,1114,1256],"va":[3142,3017,3524,2164,2895,2814,3208,2842,2851,3074,2804,2712],"se":[329,270,294,188,237,213,416,418,507,533,557,502],"sa":[525,379,549,343,492,478,577,568,627,738,953,705],"fecha":"20 de abril de 2026, 09:01 p. m."};
+const PRELOADED_DATA={"ve":[906,1639,1530,823,1186,1064,990,1100,1153,1066,1114,1256],"va":[3142,3017,3524,2164,2895,2814,3208,2842,2851,3074,2804,2712],"se":[329,270,294,188,237,213,416,418,507,533,557,502],"sa":[525,379,549,343,492,478,577,568,627,738,953,705],"fecha":"21 de abril de 2026, 08:39 a. m."};
 const months=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 const def_ve=[906,1639,1530,721,1186,1064,990,1100,1153,1066,1114,1256];
 const def_va=[3142,3017,3524,1987,2895,2814,3208,2842,2851,3074,2804,2712];
