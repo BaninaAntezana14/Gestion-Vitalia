@@ -250,7 +250,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
         </svg>
         Guardar datos
       </button>
-      <span class="save-status saved" id="save-status">✓ Guardado el 21 de abril de 2026 — 08:39:26 a.&nbsp;m.</span>
+      <span class="save-status saved" id="save-status">✓ Guardado el 21 de abril de 2026 — 11:10:06 a.&nbsp;m.</span>
       <button class="btn-save" onclick="exportarHTML()" style="background:#1d6fa4;box-shadow:0 4px 14px rgba(29,111,164,.35);margin-left:8px;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -259,11 +259,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
         Exportar para GitHub
       </button>
     </div>
-    <div class="tabs" id="tabs-bar"><button class="tab active has-data" id="tab-Enero">Enero</button><button class="tab has-data" id="tab-Febrero">Febrero</button><button class="tab has-data" id="tab-Marzo">Marzo</button><button class="tab has-data" id="tab-Abril">Abril</button><button class="tab" id="tab-Mayo">Mayo</button><button class="tab" id="tab-Junio">Junio</button><button class="tab" id="tab-Julio">Julio</button><button class="tab" id="tab-Agosto">Agosto</button><button class="tab" id="tab-Septiembre">Septiembre</button><button class="tab" id="tab-Octubre">Octubre</button><button class="tab" id="tab-Noviembre">Noviembre</button><button class="tab" id="tab-Diciembre">Diciembre</button><button class="tab tab-anual" id="tab-ANUAL">RESUMEN ANUAL</button></div>
+    <div class="tabs" id="tabs-bar"><button class="tab has-data" id="tab-Enero">Enero</button><button class="tab has-data" id="tab-Febrero">Febrero</button><button class="tab has-data" id="tab-Marzo">Marzo</button><button class="tab has-data active" id="tab-Abril">Abril</button><button class="tab" id="tab-Mayo">Mayo</button><button class="tab" id="tab-Junio">Junio</button><button class="tab" id="tab-Julio">Julio</button><button class="tab" id="tab-Agosto">Agosto</button><button class="tab" id="tab-Septiembre">Septiembre</button><button class="tab" id="tab-Octubre">Octubre</button><button class="tab" id="tab-Noviembre">Noviembre</button><button class="tab" id="tab-Diciembre">Diciembre</button><button class="tab tab-anual" id="tab-ANUAL">RESUMEN ANUAL</button></div>
   </div>
 </div>
 
-<div class="wrap" id="sheets-container"><div class="sheet active" id="sheet-Enero">
+<div class="wrap" id="sheets-container"><div class="sheet" id="sheet-Enero">
   <div class="hint">✏️ Editá <b>Objetivo (%)</b> (morado) y <b>Ventas Realizadas</b> (amarillo) · La suma de % debe dar 100 · El campo azul cambia la meta</div>
   <div class="kpi-row">
     <div class="kpi kb"><div class="kpi-lbl">Total Ventas Mes</div><div class="kpi-val" id="Enero-k-meta">696</div><div class="kpi-sub">meta mensual global</div></div>
@@ -929,28 +929,28 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
     <div class="li"><div class="ld" style="background:var(--greenL)"></div>≥ 100%</div>
     <div class="li"><div class="ld" style="background:var(--amberL)"></div>70–99%</div>
     <div class="li"><div class="ld" style="background:var(--redL)"></div>&lt; 70%</div>
-  </div></div><div class="sheet" id="sheet-Abril">
+  </div></div><div class="sheet active" id="sheet-Abril">
   <div class="hint">✏️ Editá <b>Objetivo (%)</b> (morado) y <b>Ventas Realizadas</b> (amarillo) · La suma de % debe dar 100 · El campo azul cambia la meta</div>
   <div class="kpi-row">
     <div class="kpi kb"><div class="kpi-lbl">Total Ventas Mes</div><div class="kpi-val" id="Abril-k-meta">800</div><div class="kpi-sub">meta mensual global</div></div>
-    <div class="kr kg"><div class="kpi-lbl">Total Suscripciones</div><div class="kpi-val" id="Abril-k-real">344</div><div class="kpi-sub">áreas + gestoría + no form.</div></div>
-    <div class="kpi ka"><div class="kpi-lbl">Faltante para Meta</div><div class="kpi-val" id="Abril-k-falta">456</div><div class="kpi-sub">suscripciones restantes</div></div>
-    <div class="kr kt"><div class="kpi-lbl">% Cumplimiento</div><div class="kpi-val" id="Abril-k-pct">43.0%</div><div class="kpi-sub">respecto a la meta</div></div>
+    <div class="kr kg"><div class="kpi-lbl">Total Suscripciones</div><div class="kpi-val" id="Abril-k-real">353</div><div class="kpi-sub">áreas + gestoría + no form.</div></div>
+    <div class="kpi ka"><div class="kpi-lbl">Faltante para Meta</div><div class="kpi-val" id="Abril-k-falta">447</div><div class="kpi-sub">suscripciones restantes</div></div>
+    <div class="kr kt"><div class="kpi-lbl">% Cumplimiento</div><div class="kpi-val" id="Abril-k-pct">44.1%</div><div class="kpi-sub">respecto a la meta</div></div>
     <div class="kpi kb"><div class="kpi-lbl">Venta / Semana</div><div class="kpi-val" id="Abril-k-sem">200.0</div><div class="kpi-sub">ritmo necesario</div></div>
   </div>
   <div class="prog-card">
     <div class="prog-hdr">
       <span class="prog-title">Progreso hacia la meta — Abril 2026</span>
-      <span class="prog-pct" id="Abril-gp-pct">43.0%</span>
+      <span class="prog-pct" id="Abril-gp-pct">44.1%</span>
     </div>
     <div class="prog-track">
-      <div class="prog-fill" id="Abril-gp-fill" style="width: 43%;">
-        <span class="prog-fill-lbl" id="Abril-gp-lbl">344</span>
+      <div class="prog-fill" id="Abril-gp-fill" style="width: 44.125%;">
+        <span class="prog-fill-lbl" id="Abril-gp-lbl">353</span>
       </div>
     </div>
     <div class="prog-foot">
       <span>0</span>
-      <span>Realizadas: <strong id="Abril-gp-real">344</strong> &nbsp;/&nbsp; Meta: <strong id="Abril-gp-meta">800</strong></span>
+      <span>Realizadas: <strong id="Abril-gp-real">353</strong> &nbsp;/&nbsp; Meta: <strong id="Abril-gp-meta">800</strong></span>
     </div>
   </div>
   <div class="sec-lbl"><span>Desglose por área — Abril 2026</span></div>
@@ -975,11 +975,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
       <td class="f f-pers">2</td>
       <td class="f f-pers" id="Abril-vpp-0">25.00</td>
       <td class="e"><input class="cell" id="Abril-real-0" type="number" min="0" value="51" oninput="recalc('Abril');recalcAnual();markUnsaved()" onchange="recalc('Abril');recalcAnual();markUnsaved()"></td>
-      <td class="f f-pvta" id="Abril-pvta-0">7.1%</td>
+      <td class="f f-pvta" id="Abril-pvta-0">7.4%</td>
       <td class="f" id="Abril-bar-0">
         <div class="mb-wrap">
-          <div class="mb-track"><div class="mb-fill" id="Abril-mf-0" style="width: 28.5%; background: rgb(248, 113, 113);"></div></div>
-          <span class="bdg ba" id="Abril-bdg-0">28%</span>
+          <div class="mb-track"><div class="mb-fill" id="Abril-mf-0" style="width: 29.5%; background: rgb(248, 113, 113);"></div></div>
+          <span class="bdg ba" id="Abril-bdg-0">30%</span>
         </div>
       </td>
     </tr>
@@ -993,11 +993,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
       <td class="f f-pers">3</td>
       <td class="f f-pers" id="Abril-vpp-1">12.00</td>
       <td class="e"><input class="cell" id="Abril-real-1" type="number" min="0" value="71" oninput="recalc('Abril');recalcAnual();markUnsaved()" onchange="recalc('Abril');recalcAnual();markUnsaved()"></td>
-      <td class="f f-pvta" id="Abril-pvta-1">9.0%</td>
+      <td class="f f-pvta" id="Abril-pvta-1">9.3%</td>
       <td class="f" id="Abril-bar-1">
         <div class="mb-wrap">
-          <div class="mb-track"><div class="mb-fill" id="Abril-mf-1" style="width: 50%; background: rgb(248, 113, 113);"></div></div>
-          <span class="bdg ba" id="Abril-bdg-1">50%</span>
+          <div class="mb-track"><div class="mb-fill" id="Abril-mf-1" style="width: 51.3889%; background: rgb(248, 113, 113);"></div></div>
+          <span class="bdg ba" id="Abril-bdg-1">51%</span>
         </div>
       </td>
     </tr>
@@ -1029,11 +1029,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
       <td class="f f-pers">6</td>
       <td class="f f-pers" id="Abril-vpp-3">5.00</td>
       <td class="e"><input class="cell" id="Abril-real-3" type="number" min="0" value="70" oninput="recalc('Abril');recalcAnual();markUnsaved()" onchange="recalc('Abril');recalcAnual();markUnsaved()"></td>
-      <td class="f f-pvta" id="Abril-pvta-3">9.4%</td>
+      <td class="f f-pvta" id="Abril-pvta-3">9.8%</td>
       <td class="f" id="Abril-bar-3">
         <div class="mb-wrap">
-          <div class="mb-track"><div class="mb-fill" id="Abril-mf-3" style="width: 62.5%; background: rgb(248, 113, 113);"></div></div>
-          <span class="bdg ba" id="Abril-bdg-3">63%</span>
+          <div class="mb-track"><div class="mb-fill" id="Abril-mf-3" style="width: 65%; background: rgb(248, 113, 113);"></div></div>
+          <span class="bdg ba" id="Abril-bdg-3">65%</span>
         </div>
       </td>
     </tr>
@@ -1047,11 +1047,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
       <td class="f f-pers">6</td>
       <td class="f f-pers" id="Abril-vpp-4">2.67</td>
       <td class="e"><input class="cell" id="Abril-real-4" type="number" min="0" value="24" oninput="recalc('Abril');recalcAnual();markUnsaved()" onchange="recalc('Abril');recalcAnual();markUnsaved()"></td>
-      <td class="f f-pvta" id="Abril-pvta-4">3.1%</td>
+      <td class="f f-pvta" id="Abril-pvta-4">3.3%</td>
       <td class="f" id="Abril-bar-4">
         <div class="mb-wrap">
-          <div class="mb-track"><div class="mb-fill" id="Abril-mf-4" style="width: 39.0625%; background: rgb(248, 113, 113);"></div></div>
-          <span class="bdg ba" id="Abril-bdg-4">39%</span>
+          <div class="mb-track"><div class="mb-fill" id="Abril-mf-4" style="width: 40.625%; background: rgb(248, 113, 113);"></div></div>
+          <span class="bdg ba" id="Abril-bdg-4">41%</span>
         </div>
       </td>
     </tr>
@@ -1065,11 +1065,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
       <td class="f f-pers">4</td>
       <td class="f f-pers" id="Abril-vpp-5">3.00</td>
       <td class="e"><input class="cell" id="Abril-real-5" type="number" min="0" value="26" oninput="recalc('Abril');recalcAnual();markUnsaved()" onchange="recalc('Abril');recalcAnual();markUnsaved()"></td>
-      <td class="f f-pvta" id="Abril-pvta-5">3.8%</td>
+      <td class="f f-pvta" id="Abril-pvta-5">3.6%</td>
       <td class="f" id="Abril-bar-5">
         <div class="mb-wrap">
-          <div class="mb-track"><div class="mb-fill" id="Abril-mf-5" style="width: 62.5%; background: rgb(248, 113, 113);"></div></div>
-          <span class="bdg ba" id="Abril-bdg-5">63%</span>
+          <div class="mb-track"><div class="mb-fill" id="Abril-mf-5" style="width: 60.4167%; background: rgb(248, 113, 113);"></div></div>
+          <span class="bdg ba" id="Abril-bdg-5">60%</span>
         </div>
       </td>
     </tr>
@@ -1114,7 +1114,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
           <td>TOTAL</td><td id="Abril-pct-sum" class="pct-sum-ok">100%</td>
           <td><input class="cell blue" id="Abril-total-input" type="number" min="1" value="800" oninput="recalc('Abril');recalcAnual();markUnsaved()" onchange="recalc('Abril');recalcAnual();markUnsaved()"></td>
           <td id="Abril-f-sem">200.0</td><td>—</td><td>—</td>
-          <td id="Abril-f-real">333</td><td id="Abril-f-pvta">41.6%</td><td></td>
+          <td id="Abril-f-real">340</td><td id="Abril-f-pvta">42.5%</td><td></td>
         </tr>
       </tfoot>
     </table>
@@ -1135,13 +1135,13 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
     </div></div>
     <div class="ec ec-t"><div class="ec-ico">✅</div><div>
       <div class="ec-lbl">Total Suscripciones</div>
-      <div class="ec-val" id="Abril-xtotal">344</div>
+      <div class="ec-val" id="Abril-xtotal">353</div>
     </div></div>
   </div>
   <div class="summ">
-    <div class="si"><div class="si-lbl">Total Suscripciones</div><div class="si-val ba" id="Abril-sb-total">344</div></div>
-    <div class="si"><div class="si-lbl">Faltante para Meta</div><div class="si-val ba" id="Abril-sb-falta">456</div></div>
-    <div class="si"><div class="si-lbl">Cumplimiento</div><div class="si-val ba" id="Abril-sb-pct">43.0%</div></div>
+    <div class="si"><div class="si-lbl">Total Suscripciones</div><div class="si-val ba" id="Abril-sb-total">353</div></div>
+    <div class="si"><div class="si-lbl">Faltante para Meta</div><div class="si-val ba" id="Abril-sb-falta">447</div></div>
+    <div class="si"><div class="si-lbl">Cumplimiento</div><div class="si-val ba" id="Abril-sb-pct">44.1%</div></div>
   </div>
   <div class="legend">
     <div class="li"><div class="ld" style="background:#eef2ff;border:1px solid #a5b4fc"></div>Morado = Objetivo % editable (suma debe ser 100%)</div>
@@ -2936,8 +2936,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
     <div class="scenario-grid" style="margin-bottom:28px;grid-template-columns:1fr 1fr 1fr 1fr">
       <div class="sc-card sc-real">
         <div class="sc-lbl">📊 Ambulatorio real acumulado</div>
-        <div class="sc-val" id="an-real-val">1.791</div>
-        <div class="sc-sub" id="an-real-sub">10.5% de la meta 17,000</div>
+        <div class="sc-val" id="an-real-val">1.800</div>
+        <div class="sc-sub" id="an-real-sub">10.6% de la meta 17,000</div>
       </div>
       <div class="sc-card sc-proy">
         <div class="sc-lbl">📈 Proyección ambulatorio 2026</div>
@@ -2960,12 +2960,12 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
     <div class="bar-section">
       <div class="bar-label-row">
         <span class="bar-label">Acumulado real ambulatorio <span class="bar-tag tag-real">AMBULATORIO REAL</span></span>
-        <span class="bar-pct-right blue" id="an-pct-real">10.5%</span>
+        <span class="bar-pct-right blue" id="an-pct-real">10.6%</span>
       </div>
       <div class="bar-track-wrap">
         <div class="prog-track-dark">
-          <div class="prog-fill-real" id="an-bar-real" style="width: 10.5353%;">
-            <span class="prog-fill-inner-lbl" id="an-bar-real-lbl">1.791</span>
+          <div class="prog-fill-real" id="an-bar-real" style="width: 10.5882%;">
+            <span class="prog-fill-inner-lbl" id="an-bar-real-lbl">1.800</span>
           </div>
         </div>
       </div>
@@ -3025,17 +3025,17 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
     </div>
     <div class="kb kg">
       <div class="kpi-lbl">Acumulado real</div>
-      <div class="kpi-val" id="an-k-real">1.791</div>
+      <div class="kpi-val" id="an-k-real">1.800</div>
       <div class="kpi-sub">suscripciones registradas</div>
     </div>
     <div class="kpi ka">
       <div class="kpi-lbl">Faltante para meta real</div>
-      <div class="kpi-val" id="an-k-falta">9.217</div>
+      <div class="kpi-val" id="an-k-falta">9.208</div>
       <div class="kpi-sub">ambulatorio vs suma metas</div>
     </div>
     <div class="kgold kgold">
       <div class="kpi-lbl">% Cumplimiento</div>
-      <div class="kpi-val" id="an-k-pct">16.3%</div>
+      <div class="kpi-val" id="an-k-pct">16.4%</div>
       <div class="kpi-sub">acumulado vs meta mensual total</div>
     </div>
   </div>
@@ -3108,18 +3108,18 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
       </td></tr><tr>
       <td>Abril</td>
       <td class="f">800</td>
-      <td class="f" style="color:var(--text);font-weight:600">333</td>
-      <td class="f">10</td>
-      <td class="f">1</td>
+      <td class="f" style="color:var(--text);font-weight:600">340</td>
+      <td class="f">11</td>
+      <td class="f">2</td>
       <td class="f">0</td>
-      <td class="f" style="color:var(--navy2);font-weight:700">344</td>
+      <td class="f" style="color:var(--navy2);font-weight:700">353</td>
       <td class="f">
-        <span class="bdg ba">43.0%</span>
+        <span class="bdg ba">44.1%</span>
       </td>
       <td class="f">
         <div class="mb-wrap">
-          <div class="mb-track"><div class="mb-fill" style="width:43%;background:#f87171"></div></div>
-          <span style="font-size:11px;color:var(--muted);font-family:var(--mono)">43%</span>
+          <div class="mb-track"><div class="mb-fill" style="width:44.125%;background:#f87171"></div></div>
+          <span style="font-size:11px;color:var(--muted);font-family:var(--mono)">44%</span>
         </div>
       </td></tr><tr>
       <td>Mayo</td>
@@ -3254,12 +3254,12 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
         <tr>
           <td>TOTAL ANUAL</td>
           <td id="an-f-meta">11.008</td>
-          <td id="an-f-areas">1.748</td>
-          <td id="an-f-gest">32</td>
-          <td id="an-f-noform">9</td>
+          <td id="an-f-areas">1.755</td>
+          <td id="an-f-gest">33</td>
+          <td id="an-f-noform">10</td>
           <td id="an-f-adm">2</td>
-          <td id="an-f-total">1.791</td>
-          <td id="an-f-pct">16.3%</td>
+          <td id="an-f-total">1.800</td>
+          <td id="an-f-pct">16.4%</td>
           <td></td>
         </tr>
       </tfoot>
@@ -3271,13 +3271,13 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
 
 
 <!-- TOAST -->
-<div class="toast show" id="toast">
+<div class="toast" id="toast">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
   </svg>
   <div class="toast-txt">
     <div class="toast-main">Datos guardados correctamente</div>
-    <div class="toast-ts" id="toast-ts">21 de abril de 2026 — 08:39:26 a.&nbsp;m.</div>
+    <div class="toast-ts" id="toast-ts">21 de abril de 2026 — 11:10:06 a.&nbsp;m.</div>
   </div>
 </div>
 
@@ -3612,7 +3612,7 @@ function recalcAnual(){
 
 // ── SAVE / LOAD ───────────────────────────────────────────
 const STORAGE_KEY='vitalia2026_v2';
-const PRELOADED_DATA={"ts":"2026-04-21T12:39:28.512Z","meses":{"Enero":{"meta":696,"areas":[165,59,36,88,32,60,33,37],"pcts":[25,18,15,15,8,7,7,5],"gestoria":9,"noform":3,"admisiones":1},"Febrero":{"meta":676,"areas":[132,47,24,46,30,23,35,31],"pcts":[25,18,15,15,8,7,7,5],"gestoria":4,"noform":2,"admisiones":1},"Marzo":{"meta":812,"areas":[104,54,50,117,45,46,68,53],"pcts":[25,18,15,15,8,7,7,5],"gestoria":9,"noform":3,"admisiones":0},"Abril":{"meta":800,"areas":[57,72,26,75,25,30,13,35],"pcts":[25,18,15,15,8,6,7,6],"gestoria":10,"noform":1,"admisiones":0},"Mayo":{"meta":926,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0},"Junio":{"meta":900,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0},"Julio":{"meta":1059,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0},"Agosto":{"meta":966,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0},"Septiembre":{"meta":998,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0},"Octubre":{"meta":1106,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0},"Noviembre":{"meta":1038,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0},"Diciembre":{"meta":1031,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0}}};
+const PRELOADED_DATA={"ts":"2026-04-21T15:10:21.735Z","meses":{"Enero":{"meta":696,"areas":[165,59,36,88,32,60,33,37],"pcts":[25,18,15,15,8,7,7,5],"gestoria":9,"noform":3,"admisiones":1},"Febrero":{"meta":676,"areas":[132,47,24,46,30,23,35,31],"pcts":[25,18,15,15,8,7,7,5],"gestoria":4,"noform":2,"admisiones":1},"Marzo":{"meta":812,"areas":[104,54,50,117,45,46,68,53],"pcts":[25,18,15,15,8,7,7,5],"gestoria":9,"noform":3,"admisiones":0},"Abril":{"meta":800,"areas":[59,74,26,78,26,29,13,35],"pcts":[25,18,15,15,8,6,7,6],"gestoria":11,"noform":2,"admisiones":0},"Mayo":{"meta":926,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0},"Junio":{"meta":900,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0},"Julio":{"meta":1059,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0},"Agosto":{"meta":966,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0},"Septiembre":{"meta":998,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0},"Octubre":{"meta":1106,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0},"Noviembre":{"meta":1038,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0},"Diciembre":{"meta":1031,"areas":[0,0,0,0,0,0,0,0],"pcts":[25,18,15,15,8,7,7,5],"gestoria":0,"noform":0,"admisiones":0}}};
 function collectData(){
   const data={ts:new Date().toISOString(),meses:{}};
   MESES.forEach(mes=>{
