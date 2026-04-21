@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+<html lang="es"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vitalia 2026 — Dashboard de Suscripciones</title>
@@ -120,30 +118,30 @@
 
 <div class="top-bar">
   <h1>Vitalia 2026 — Dashboard de Suscripciones</h1>
-  <span>Clínica Foianini &nbsp;·&nbsp; Actualizado: <span id="fecha-hoy"></span></span>
+  <span>Clínica Foianini &nbsp;·&nbsp; Actualizado: <span id="fecha-hoy">20 de abril de 2026</span></span>
 </div>
 <div class="save-bar">
   <button class="btn-save" onclick="guardarDatos()">Guardar cambios</button>
   <button class="btn-reset" onclick="resetearDatos()">Restaurar valores originales</button>
   <button class="btn-save" onclick="exportarHTML()" style="background:#1d6fa4;box-shadow:0 4px 14px rgba(29,111,164,.35);">⬇ Exportar para GitHub</button>
-  <span class="save-status" id="save-status">Sin cambios guardados aún</span>
+  <span class="save-status ok" id="save-status" style="font-weight: 700;">Guardado el 20 de abril de 2026, 09:00 p.&nbsp;m.</span>
 </div>
 
 <div class="container">
 
   <div class="kpi-grid">
-    <div class="kpi blue"><div class="kpi-lbl">Total suscripciones 2026</div><div class="kpi-val" id="kpi-total">—</div><div class="kpi-sub">acumulado + proyectado</div></div>
-    <div class="kpi blue"><div class="kpi-lbl">Emergencias 2026</div><div class="kpi-val" id="kpi-emerg">—</div><div class="kpi-sub">12 meses</div></div>
-    <div class="kpi green"><div class="kpi-lbl">Ambulatorio 2026</div><div class="kpi-val" id="kpi-amb">—</div><div class="kpi-sub">12 meses</div></div>
-    <div class="kpi orange"><div class="kpi-lbl">Ingreso proyectado</div><div class="kpi-val" id="kpi-ing">—</div><div class="kpi-sub">a Bs 99 / suscripción</div></div>
+    <div class="kpi blue"><div class="kpi-lbl">Total suscripciones 2026</div><div class="kpi-val" id="kpi-total">11.398</div><div class="kpi-sub">acumulado + proyectado</div></div>
+    <div class="kpi blue"><div class="kpi-lbl">Emergencias 2026</div><div class="kpi-val" id="kpi-emerg">4.464</div><div class="kpi-sub">12 meses</div></div>
+    <div class="kpi green"><div class="kpi-lbl">Ambulatorio 2026</div><div class="kpi-val" id="kpi-amb">6.934</div><div class="kpi-sub">12 meses</div></div>
+    <div class="kpi orange"><div class="kpi-lbl">Ingreso proyectado</div><div class="kpi-val" id="kpi-ing">Bs 1.128.402</div><div class="kpi-sub">a Bs 99 / suscripción</div></div>
   </div>
 
   <div class="section">
     <div class="sec-title">Progreso hacia la meta de 17,000 suscripciones</div>
     <div class="meta-wrap">
-      <div class="meta-labels"><span>0</span><span id="bar-lbl" style="color:#185FA5;font-weight:700">—</span><span style="color:#4527A0;font-weight:600">Meta: 17,000</span></div>
-      <div class="meta-track"><div class="meta-fill" id="meta-bar" style="width:0%"></div></div>
-      <div class="meta-pct" id="bar-pct">—</div>
+      <div class="meta-labels"><span>0</span><span id="bar-lbl" style="color:#185FA5;font-weight:700">11.398 / 17.000</span><span style="color:#4527A0;font-weight:600">Meta: 17,000</span></div>
+      <div class="meta-track"><div class="meta-fill" id="meta-bar" style="width: 67.0471%;"></div></div>
+      <div class="meta-pct" id="bar-pct">67.0% de la meta alcanzada &nbsp;·&nbsp; faltan <strong>5.602</strong> suscripciones</div>
     </div>
   </div>
 
@@ -170,7 +168,127 @@
             <th>Ingreso Bs</th>
           </tr>
         </thead>
-        <tbody id="proj-tbody"></tbody>
+        <tbody id="proj-tbody"><tr class="real-row">
+      <td>Enero <span class="badge b-real">real</span></td>
+      <td><input class="inp vis-inp is-real" id="ve-0" type="number" min="0" max="99999" value="906"></td>
+      <td><input class="inp sus-inp is-real" id="se-0" type="number" min="0" max="9999" value="329"></td>
+      <td id="cve-0" style="color:#555">36.3%</td>
+      <td><input class="inp vis-inp is-real" id="va-0" type="number" min="0" max="99999" value="3142"></td>
+      <td><input class="inp sus-inp is-real" id="sa-0" type="number" min="0" max="9999" value="525"></td>
+      <td id="cva-0" style="color:#555">16.7%</td>
+      <td id="tt-0" style="font-weight:700">854</td>
+      <td id="ti-0" style="color:#555">84.546</td>
+    </tr><tr class="real-row">
+      <td>Febrero <span class="badge b-real">real</span></td>
+      <td><input class="inp vis-inp is-real" id="ve-1" type="number" min="0" max="99999" value="1639"></td>
+      <td><input class="inp sus-inp is-real" id="se-1" type="number" min="0" max="9999" value="270"></td>
+      <td id="cve-1" style="color:#555">16.5%</td>
+      <td><input class="inp vis-inp is-real" id="va-1" type="number" min="0" max="99999" value="3017"></td>
+      <td><input class="inp sus-inp is-real" id="sa-1" type="number" min="0" max="9999" value="379"></td>
+      <td id="cva-1" style="color:#555">12.6%</td>
+      <td id="tt-1" style="font-weight:700">649</td>
+      <td id="ti-1" style="color:#555">64.251</td>
+    </tr><tr class="real-row">
+      <td>Marzo <span class="badge b-real">real</span></td>
+      <td><input class="inp vis-inp is-real" id="ve-2" type="number" min="0" max="99999" value="1530"></td>
+      <td><input class="inp sus-inp is-real" id="se-2" type="number" min="0" max="9999" value="294"></td>
+      <td id="cve-2" style="color:#555">19.2%</td>
+      <td><input class="inp vis-inp is-real" id="va-2" type="number" min="0" max="99999" value="3524"></td>
+      <td><input class="inp sus-inp is-real" id="sa-2" type="number" min="0" max="9999" value="549"></td>
+      <td id="cva-2" style="color:#555">15.6%</td>
+      <td id="tt-2" style="font-weight:700">843</td>
+      <td id="ti-2" style="color:#555">83.457</td>
+    </tr><tr class="real-row">
+      <td>Abril <span class="badge b-real">real</span></td>
+      <td><input class="inp vis-inp is-real" id="ve-3" type="number" min="0" max="99999" value="823"></td>
+      <td><input class="inp sus-inp is-real" id="se-3" type="number" min="0" max="9999" value="187"></td>
+      <td id="cve-3" style="color:#555">22.8%</td>
+      <td><input class="inp vis-inp is-real" id="va-3" type="number" min="0" max="99999" value="2164"></td>
+      <td><input class="inp sus-inp is-real" id="sa-3" type="number" min="0" max="9999" value="334"></td>
+      <td id="cva-3" style="color:#555">15.9%</td>
+      <td id="tt-3" style="font-weight:700">531</td>
+      <td id="ti-3" style="color:#555">52.569</td>
+    </tr><tr>
+      <td>Mayo</td>
+      <td><input class="inp vis-inp" id="ve-4" type="number" min="0" max="99999" value="1186"></td>
+      <td><input class="inp sus-inp" id="se-4" type="number" min="0" max="9999" value="237"></td>
+      <td id="cve-4" style="color:#555">20.0%</td>
+      <td><input class="inp vis-inp" id="va-4" type="number" min="0" max="99999" value="2895"></td>
+      <td><input class="inp sus-inp" id="sa-4" type="number" min="0" max="9999" value="492"></td>
+      <td id="cva-4" style="color:#555">17.0%</td>
+      <td id="tt-4" style="font-weight:700">729</td>
+      <td id="ti-4" style="color:#555">72.171</td>
+    </tr><tr>
+      <td>Junio</td>
+      <td><input class="inp vis-inp" id="ve-5" type="number" min="0" max="99999" value="1064"></td>
+      <td><input class="inp sus-inp" id="se-5" type="number" min="0" max="9999" value="213"></td>
+      <td id="cve-5" style="color:#555">20.0%</td>
+      <td><input class="inp vis-inp" id="va-5" type="number" min="0" max="99999" value="2814"></td>
+      <td><input class="inp sus-inp" id="sa-5" type="number" min="0" max="9999" value="478"></td>
+      <td id="cva-5" style="color:#555">17.0%</td>
+      <td id="tt-5" style="font-weight:700">691</td>
+      <td id="ti-5" style="color:#555">68.409</td>
+    </tr><tr>
+      <td>Julio</td>
+      <td><input class="inp vis-inp" id="ve-6" type="number" min="0" max="99999" value="990"></td>
+      <td><input class="inp sus-inp" id="se-6" type="number" min="0" max="9999" value="416"></td>
+      <td id="cve-6" style="color:#555">42.0%</td>
+      <td><input class="inp vis-inp" id="va-6" type="number" min="0" max="99999" value="3208"></td>
+      <td><input class="inp sus-inp" id="sa-6" type="number" min="0" max="9999" value="577"></td>
+      <td id="cva-6" style="color:#555">18.0%</td>
+      <td id="tt-6" style="font-weight:700">993</td>
+      <td id="ti-6" style="color:#555">98.307</td>
+    </tr><tr>
+      <td>Agosto</td>
+      <td><input class="inp vis-inp" id="ve-7" type="number" min="0" max="99999" value="1100"></td>
+      <td><input class="inp sus-inp" id="se-7" type="number" min="0" max="9999" value="418"></td>
+      <td id="cve-7" style="color:#555">38.0%</td>
+      <td><input class="inp vis-inp" id="va-7" type="number" min="0" max="99999" value="2842"></td>
+      <td><input class="inp sus-inp" id="sa-7" type="number" min="0" max="9999" value="568"></td>
+      <td id="cva-7" style="color:#555">20.0%</td>
+      <td id="tt-7" style="font-weight:700">986</td>
+      <td id="ti-7" style="color:#555">97.614</td>
+    </tr><tr>
+      <td>Septiembre</td>
+      <td><input class="inp vis-inp" id="ve-8" type="number" min="0" max="99999" value="1153"></td>
+      <td><input class="inp sus-inp" id="se-8" type="number" min="0" max="9999" value="507"></td>
+      <td id="cve-8" style="color:#555">44.0%</td>
+      <td><input class="inp vis-inp" id="va-8" type="number" min="0" max="99999" value="2851"></td>
+      <td><input class="inp sus-inp" id="sa-8" type="number" min="0" max="9999" value="627"></td>
+      <td id="cva-8" style="color:#555">22.0%</td>
+      <td id="tt-8" style="font-weight:700">1.134</td>
+      <td id="ti-8" style="color:#555">112.266</td>
+    </tr><tr>
+      <td>Octubre</td>
+      <td><input class="inp vis-inp" id="ve-9" type="number" min="0" max="99999" value="1066"></td>
+      <td><input class="inp sus-inp" id="se-9" type="number" min="0" max="9999" value="533"></td>
+      <td id="cve-9" style="color:#555">50.0%</td>
+      <td><input class="inp vis-inp" id="va-9" type="number" min="0" max="99999" value="3074"></td>
+      <td><input class="inp sus-inp" id="sa-9" type="number" min="0" max="9999" value="738"></td>
+      <td id="cva-9" style="color:#555">24.0%</td>
+      <td id="tt-9" style="font-weight:700">1.271</td>
+      <td id="ti-9" style="color:#555">125.829</td>
+    </tr><tr>
+      <td>Noviembre</td>
+      <td><input class="inp vis-inp" id="ve-10" type="number" min="0" max="99999" value="1114"></td>
+      <td><input class="inp sus-inp" id="se-10" type="number" min="0" max="9999" value="557"></td>
+      <td id="cve-10" style="color:#555">50.0%</td>
+      <td><input class="inp vis-inp" id="va-10" type="number" min="0" max="99999" value="2804"></td>
+      <td><input class="inp sus-inp" id="sa-10" type="number" min="0" max="9999" value="953"></td>
+      <td id="cva-10" style="color:#555">34.0%</td>
+      <td id="tt-10" style="font-weight:700">1.510</td>
+      <td id="ti-10" style="color:#555">149.490</td>
+    </tr><tr>
+      <td>Diciembre</td>
+      <td><input class="inp vis-inp" id="ve-11" type="number" min="0" max="99999" value="1256"></td>
+      <td><input class="inp sus-inp" id="se-11" type="number" min="0" max="9999" value="502"></td>
+      <td id="cve-11" style="color:#555">40.0%</td>
+      <td><input class="inp vis-inp" id="va-11" type="number" min="0" max="99999" value="2712"></td>
+      <td><input class="inp sus-inp" id="sa-11" type="number" min="0" max="9999" value="705"></td>
+      <td id="cva-11" style="color:#555">26.0%</td>
+      <td id="tt-11" style="font-weight:700">1.207</td>
+      <td id="ti-11" style="color:#555">119.493</td>
+    </tr><tr class="tot-row"><td>Total 2026</td><td id="s-ve">13.827</td><td id="s-se">4.464</td><td></td><td id="s-va">35.047</td><td id="s-sa">6.934</td><td></td><td id="s-tt">11.398</td><td id="s-ti">Bs 1.128.402</td></tr></tbody>
       </table>
       </div>
     </div>
@@ -179,9 +297,9 @@
   <div class="section">
     <div class="sec-title">Escenarios según el total actual</div>
     <div class="sc-grid">
-      <div class="sc sc-c"><div class="sc-lbl">Conservador −15%</div><div class="sc-val" id="sc-c">—</div><div class="sc-sub" id="sc-c-bs">—</div></div>
-      <div class="sc sc-b"><div class="sc-lbl">Tu proyección actual</div><div class="sc-val" id="sc-b">—</div><div class="sc-sub" id="sc-b-bs">—</div></div>
-      <div class="sc sc-o"><div class="sc-lbl">Optimista +15%</div><div class="sc-val" id="sc-o">—</div><div class="sc-sub" id="sc-o-bs">—</div></div>
+      <div class="sc sc-c"><div class="sc-lbl">Conservador −15%</div><div class="sc-val" id="sc-c">9.688</div><div class="sc-sub" id="sc-c-bs">Bs 959.142</div></div>
+      <div class="sc sc-b"><div class="sc-lbl">Tu proyección actual</div><div class="sc-val" id="sc-b">11.398</div><div class="sc-sub" id="sc-b-bs">Bs 1.128.402</div></div>
+      <div class="sc sc-o"><div class="sc-lbl">Optimista +15%</div><div class="sc-val" id="sc-o">13.108</div><div class="sc-sub" id="sc-o-bs">Bs 1.297.662</div></div>
     </div>
   </div>
 
@@ -277,10 +395,10 @@
       <table>
         <thead><tr><th>Concepto</th><th>2025 real</th><th>Meses activos</th><th>2026 proyectado</th><th>Variación</th></tr></thead>
         <tbody>
-          <tr><td>Emergencias</td><td>3,266</td><td>8 meses</td><td id="cmp-e">—</td><td id="cmp-e-d">—</td></tr>
-          <tr><td>Ambulatorio</td><td>2,664</td><td>6 meses</td><td id="cmp-a">—</td><td id="cmp-a-d">—</td></tr>
-          <tr class="tot-row"><td>Total suscripciones</td><td>5,930</td><td>—</td><td id="cmp-t">—</td><td id="cmp-t-d">—</td></tr>
-          <tr class="tot-row"><td>Ingresos Bs</td><td>587,070</td><td>—</td><td id="cmp-i">—</td><td id="cmp-i-d">—</td></tr>
+          <tr><td>Emergencias</td><td>3,266</td><td>8 meses</td><td id="cmp-e">4.464</td><td id="cmp-e-d"><span class="badge b-up">+1.198 (+36.7%)</span></td></tr>
+          <tr><td>Ambulatorio</td><td>2,664</td><td>6 meses</td><td id="cmp-a">6.934</td><td id="cmp-a-d"><span class="badge b-up">+4.270 (+160.3%)</span></td></tr>
+          <tr class="tot-row"><td>Total suscripciones</td><td>5,930</td><td>—</td><td id="cmp-t">11.398</td><td id="cmp-t-d"><span class="badge b-up">+5.468 (+92.2%)</span></td></tr>
+          <tr class="tot-row"><td>Ingresos Bs</td><td>587,070</td><td>—</td><td id="cmp-i">1.128.402</td><td id="cmp-i-d"><span class="badge b-up">+541.332 (+92.2%)</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -292,7 +410,7 @@
       <table>
         <thead><tr><th>Escenario</th><th>Emerg.</th><th>Conv. E.</th><th>Amb.</th><th>Conv. A.</th><th>Total</th><th>Estado</th></tr></thead>
         <tbody>
-          <tr><td>Tu proyección actual</td><td id="br-e">—</td><td id="br-ce">—</td><td id="br-a">—</td><td id="br-ca">—</td><td id="br-t">—</td><td><span class="badge b-neu" id="br-fact">—</span></td></tr>
+          <tr><td>Tu proyección actual</td><td id="br-e">4.464</td><td id="br-ce">32.3%</td><td id="br-a">6.934</td><td id="br-ca">19.8%</td><td id="br-t">11.398</td><td><span class="badge b-neu" id="br-fact">En progreso</span></td></tr>
           <tr><td>Para llegar a 17,000</td><td>~8,500</td><td>62%*</td><td>~8,500</td><td>24%</td><td>17,000</td><td><span class="badge b-warn">Requiere campaña activa</span></td></tr>
           <tr><td>Techo teórico (conv. récord)</td><td>6,588</td><td>48%</td><td>11,158</td><td>32%</td><td>17,746</td><td><span class="badge b-warn">Muy difícil</span></td></tr>
         </tbody>
@@ -317,7 +435,7 @@
     <div class="chart-card">
       <div class="chart-title"><span class="dot dot-e"></span> Vitalia + Emergencias — Suscripciones por mes</div>
       <div class="chart-sub">Azul oscuro = datos reales &nbsp;·&nbsp; Azul claro = proyección &nbsp;·&nbsp; Línea roja = meta mensual promedio</div>
-      <div class="chart-wrap"><canvas id="chart-emerg"></canvas></div>
+      <div class="chart-wrap"><canvas id="chart-emerg" style="box-sizing: border-box; display: block; height: 280px; width: 1090px;" width="1090" height="280"></canvas></div>
       <div class="chart-legend">
         <div class="cleg-item"><div class="cleg-dot" style="background:#185FA5"></div>Reales</div>
         <div class="cleg-item"><div class="cleg-dot" style="background:#90CAF9;border:1px dashed #185FA5"></div>Proyectados</div>
@@ -329,7 +447,7 @@
     <div class="chart-card">
       <div class="chart-title"><span class="dot dot-a"></span> Vitalia + Ambulatorio — Suscripciones por mes</div>
       <div class="chart-sub">Verde oscuro = datos reales &nbsp;·&nbsp; Verde claro = proyección &nbsp;·&nbsp; Línea naranja = meta mensual promedio</div>
-      <div class="chart-wrap"><canvas id="chart-amb"></canvas></div>
+      <div class="chart-wrap"><canvas id="chart-amb" style="box-sizing: border-box; display: block; height: 280px; width: 1090px;" width="1090" height="280"></canvas></div>
       <div class="chart-legend">
         <div class="cleg-item"><div class="cleg-dot" style="background:#2E7D32"></div>Reales</div>
         <div class="cleg-item"><div class="cleg-dot" style="background:#A5D6A7;border:1px dashed #2E7D32"></div>Proyectados</div>
@@ -341,7 +459,7 @@
     <div class="chart-card">
       <div class="chart-title">📊 Comparativo mensual — Emergencias vs Ambulatorio</div>
       <div class="chart-sub">Barras apiladas por mes &nbsp;·&nbsp; Línea morada = total combinado mensual</div>
-      <div class="chart-wrap" style="height:310px"><canvas id="chart-combo"></canvas></div>
+      <div class="chart-wrap" style="height:310px"><canvas id="chart-combo" style="box-sizing: border-box; display: block; height: 310px; width: 1090px;" width="1090" height="310"></canvas></div>
       <div class="chart-legend">
         <div class="cleg-item"><div class="cleg-dot" style="background:#185FA5"></div>Emergencias</div>
         <div class="cleg-item"><div class="cleg-dot" style="background:#2E7D32"></div>Ambulatorio</div>
@@ -357,7 +475,7 @@
 
 <script>
 const META=17000,PRICE=99,STORAGE_KEY='vitalia2026_v1';
-const PRELOADED_DATA=null;
+const PRELOADED_DATA={"ve":[906,1639,1530,823,1186,1064,990,1100,1153,1066,1114,1256],"va":[3142,3017,3524,2164,2895,2814,3208,2842,2851,3074,2804,2712],"se":[329,270,294,188,237,213,416,418,507,533,557,502],"sa":[525,379,549,343,492,478,577,568,627,738,953,705],"fecha":"20 de abril de 2026, 09:01 p. m."};
 const months=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 const def_ve=[906,1639,1530,721,1186,1064,990,1100,1153,1066,1114,1256];
 const def_va=[3142,3017,3524,1987,2895,2814,3208,2842,2851,3074,2804,2712];
@@ -647,5 +765,6 @@ window.refreshAll=function(){
 document.addEventListener('DOMContentLoaded',()=>{setTimeout(buildCharts,200);});
 </script>
 
-</body>
-</html>
+
+
+</body></html>
