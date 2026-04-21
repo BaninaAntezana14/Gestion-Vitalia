@@ -125,6 +125,7 @@
 <div class="save-bar">
   <button class="btn-save" onclick="guardarDatos()">Guardar cambios</button>
   <button class="btn-reset" onclick="resetearDatos()">Restaurar valores originales</button>
+  <button class="btn-save" onclick="exportarHTML()" style="background:#1d6fa4;box-shadow:0 4px 14px rgba(29,111,164,.35);">⬇ Exportar para GitHub</button>
   <span class="save-status" id="save-status">Sin cambios guardados aún</span>
 </div>
 
@@ -356,6 +357,7 @@
 
 <script>
 const META=17000,PRICE=99,STORAGE_KEY='vitalia2026_v1';
+const PRELOADED_DATA=null;
 const months=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 const def_ve=[906,1639,1530,721,1186,1064,990,1100,1153,1066,1114,1256];
 const def_va=[3142,3017,3524,1987,2895,2814,3208,2842,2851,3074,2804,2712];
@@ -367,6 +369,17 @@ let ve=[...def_ve],va=[...def_va],se=[...def_e],sa=[...def_a];
 
 function cargarDatos(){
   try{
+    // Primero intenta cargar datos incrustados (exportados para GitHub)
+    if(PRELOADED_DATA){
+      const d=PRELOADED_DATA;
+      ve=d.ve||[...def_ve];va=d.va||[...def_va];
+      se=d.se||[...def_e];sa=d.sa||[...def_a];
+      const st=document.getElementById('save-status');
+      st.className='save-status ok';
+      st.textContent='Datos guardados el '+d.fecha+' cargados correctamente';
+      return;
+    }
+    // Si no, carga desde localStorage (uso local)
     const saved=localStorage.getItem(STORAGE_KEY);
     if(saved){
       const d=JSON.parse(saved);
@@ -377,6 +390,22 @@ function cargarDatos(){
       st.textContent='Datos guardados el '+d.fecha+' cargados correctamente';
     }
   }catch(e){}
+}
+function exportarHTML(){
+  try{
+    const fecha=new Date().toLocaleDateString('es-BO',{day:'2-digit',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'});
+    const data={ve,va,se,sa,fecha};
+    const jsonStr=JSON.stringify(data);
+    const html=document.documentElement.outerHTML;
+    const exportado=html.replace('const PRELOADED_DATA=null;','const PRELOADED_DATA='+jsonStr+';');
+    const blob=new Blob([exportado],{type:'text/html;charset=utf-8'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='VITALIA_2026_Dashboard_VIT EMERG AMB.html';
+    a.click();
+    URL.revokeObjectURL(a.href);
+    alert('✅ Archivo exportado. Reemplázalo en la carpeta Gestion-Vitalia y avísale a Claude para subirlo a GitHub.');
+  }catch(e){alert('No se pudo exportar: '+e);}
 }
 
 function guardarDatos(){
