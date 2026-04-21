@@ -253,6 +253,13 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14
         Guardar datos
       </button>
       <span class="save-status" id="save-status">Sin guardar aún</span>
+      <button class="btn-save" onclick="exportarHTML()" style="background:#1d6fa4;box-shadow:0 4px 14px rgba(29,111,164,.35);margin-left:8px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Exportar para GitHub
+      </button>
     </div>
     <div class="tabs" id="tabs-bar"></div>
   </div>
@@ -751,6 +758,7 @@ function recalcAnual(){
 
 // ── SAVE / LOAD ───────────────────────────────────────────
 const STORAGE_KEY='vitalia2026_v2';
+const PRELOADED_DATA=null;
 function collectData(){
   const data={ts:new Date().toISOString(),meses:{}};
   MESES.forEach(mes=>{
@@ -783,11 +791,34 @@ function applyData(data){
 }
 function loadData(){
   try{
+    // Primero intenta cargar datos incrustados (exportados para GitHub)
+    if(PRELOADED_DATA){
+      applyData(PRELOADED_DATA);
+      if(PRELOADED_DATA.ts){const d=new Date(PRELOADED_DATA.ts);const st=document.getElementById('save-status');
+        st.className='save-status saved';st.textContent='✓ Guardado el '+fmtFecha(d);}
+      return;
+    }
+    // Si no, carga desde localStorage (uso local)
     const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return;
     const data=JSON.parse(raw);applyData(data);
     if(data.ts){const d=new Date(data.ts);const st=document.getElementById('save-status');
       st.className='save-status saved';st.textContent='✓ Guardado el '+fmtFecha(d);}
   }catch(e){console.warn('No se pudo cargar:',e);}
+}
+function exportarHTML(){
+  try{
+    const data=collectData();
+    const jsonStr=JSON.stringify(data);
+    const html=document.documentElement.outerHTML;
+    const exportado=html.replace('const PRELOADED_DATA=null;','const PRELOADED_DATA='+jsonStr+';');
+    const blob=new Blob([exportado],{type:'text/html;charset=utf-8'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='VITALIA_2026_Objetivos.html';
+    a.click();
+    URL.revokeObjectURL(a.href);
+    alert('✅ Archivo exportado. Reemplázalo en la carpeta Gestion-Vitalia y avísale a Claude para subirlo a GitHub.');
+  }catch(e){alert('No se pudo exportar: '+e);}
 }
 function guardar(){
   try{
