@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis Comparativo — Antezana vs Daniela · Abril 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0a1628;--navy2:#0f1e30;--navy3:#152033;
+  --blue:#2478c8;--teal:#00c9a7;--gold:#f59e0b;
+  --green:#16a34a;--red:#dc2626;--orange:#ea580c;
+  --purple:#7c3aed;
+  --white:#f0f6fc;--muted:#7d8ea0;--border:#1e3048;
+  --font:'DM Sans',sans-serif;--mono:'DM Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--navy);color:var(--white);font-size:15px;line-height:1.7;padding:32px 20px 60px}
+.wrap{max-width:980px;margin:0 auto}
+
+/* HEADER */
+.header{text-align:center;margin-bottom:28px}
+.header-tag{display:inline-block;background:rgba(0,201,167,.1);border:1px solid rgba(0,201,167,.3);color:var(--teal);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 14px;border-radius:99px;margin-bottom:14px}
+.header h1{font-size:clamp(22px,4vw,34px);font-weight:700;color:#fff;margin-bottom:6px;line-height:1.2}
+.header-sub{font-size:14px;color:rgba(255,255,255,.65)}
+
+/* KPI STRIP */
+.kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+.kpi{background:var(--navy2);border:1px solid var(--border);border-radius:12px;padding:18px 16px;text-align:center;position:relative;overflow:hidden}
+.kpi::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px}
+.kt::after{background:var(--teal)} .kb::after{background:var(--blue)}
+.kg::after{background:var(--gold)} .kp::after{background:var(--purple)}
+.kpi-val{font-family:var(--mono);font-size:30px;font-weight:700;margin-bottom:4px}
+.kt .kpi-val{color:var(--teal)} .kb .kpi-val{color:var(--blue)}
+.kg .kpi-val{color:var(--gold)} .kp .kpi-val{color:var(--purple)}
+.kpi-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.55)}
+.kpi-sub{font-size:12px;color:rgba(255,255,255,.4);margin-top:3px}
+
+/* TABLA COMPARATIVA PRINCIPAL */
+.cmp-table-wrap{background:var(--navy2);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:24px}
+.cmp-table-header{padding:16px 22px;border-bottom:1px solid var(--border);background:linear-gradient(90deg,rgba(0,201,167,.08),rgba(36,120,200,.05))}
+.cmp-table-header h2{font-size:16px;font-weight:800;color:#fff}
+.cmp-table-header p{font-size:12px;color:rgba(255,255,255,.55);margin-top:3px}
+.ctbl{width:100%;border-collapse:collapse;font-size:14px}
+.ctbl thead th{padding:11px 18px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);border-bottom:1px solid var(--border);background:var(--navy3)}
+.ctbl thead th:first-child{text-align:left}
+.ctbl thead th:not(:first-child){text-align:right}
+.ctbl thead th.th-ant{color:var(--teal)}
+.ctbl thead th.th-dan{color:#60a5fa}
+.ctbl tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background .1s}
+.ctbl tbody tr:hover{background:rgba(255,255,255,.02)}
+.ctbl tbody tr.winner-row{background:rgba(0,201,167,.04)}
+.ctbl td{padding:12px 18px;vertical-align:middle}
+.ctbl td:not(:first-child){text-align:right;font-family:var(--mono)}
+.ctbl td:first-child{font-size:13px;color:rgba(255,255,255,.75);font-weight:500}
+.val-ant{color:var(--teal);font-weight:700;font-size:15px}
+.val-dan{color:#60a5fa;font-weight:700;font-size:15px}
+.val-win{color:var(--gold);font-weight:700;font-size:14px}
+.ctbl tfoot td{padding:13px 18px;background:var(--navy3);font-weight:700;border-top:2px solid var(--border)}
+.ctbl tfoot td:first-child{color:rgba(255,255,255,.8);font-size:13px}
+
+/* FASES */
+.fases{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.fase-card{background:var(--navy2);border:1px solid var(--border);border-radius:14px;padding:20px}
+.fase-tag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:3px 10px;border-radius:5px;display:inline-block;margin-bottom:12px}
+.tf1{background:rgba(245,158,11,.2);color:#fcd34d;border:1px solid rgba(245,158,11,.4)}
+.tf2{background:rgba(0,201,167,.15);color:#6eecd8;border:1px solid rgba(0,201,167,.4)}
+.fase-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:4px}
+.fase-sub{font-size:12px;color:var(--muted);margin-bottom:14px}
+.frow{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.frow:last-child{border-bottom:none}
+.frl{font-size:13px;color:rgba(255,255,255,.65)}
+.frva{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--teal)}
+.frvd{font-family:var(--mono);font-size:15px;font-weight:700;color:#60a5fa}
+.frvw{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--gold)}
+.winner-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(0,201,167,.1);border:1px solid rgba(0,201,167,.25);border-radius:6px;padding:4px 12px;font-size:11px;font-weight:700;color:var(--teal);margin-top:12px}
+
+/* GRÁFICOS */
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.chart-wrap{background:var(--navy2);border:1px solid var(--border);border-radius:14px;padding:20px}
+.chart-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:3px}
+.chart-sub{font-size:11px;color:var(--muted);margin-bottom:16px}
+.bar-chart{display:flex;align-items:flex-end;gap:4px;height:120px;padding-bottom:26px;position:relative}
+.bar-chart::after{content:'';position:absolute;bottom:26px;left:0;right:0;height:1px;background:rgba(255,255,255,.06)}
+.bc{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.bv{font-family:var(--mono);font-size:9px;font-weight:700;margin-bottom:2px}
+.bf{width:80%;border-radius:2px 2px 0 0;min-height:2px}
+.bl{position:absolute;bottom:-18px;font-size:8px;color:rgba(255,255,255,.4);font-weight:600}
+.sep-v{width:2px;background:rgba(255,255,255,.12);flex-shrink:0;margin-bottom:26px;border-radius:1px;position:relative}
+.sep-v::before{content:'→';position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-size:8px;color:rgba(255,255,255,.35)}
+.legend{display:flex;gap:14px;margin-top:20px;flex-wrap:wrap}
+.leg{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted)}
+.leg-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+
+/* ANÁLISIS */
+.analisis{background:var(--navy2);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:24px}
+.an-head{padding:20px 26px;border-bottom:1px solid var(--border);background:linear-gradient(90deg,rgba(0,201,167,.1),rgba(36,120,200,.05))}
+.an-head h2{font-size:19px;font-weight:800;color:#fff}
+.an-head p{font-size:13px;color:rgba(255,255,255,.65);margin-top:4px}
+.an-body{padding:22px 26px}
+.finding{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.finding:last-child{border-bottom:none;padding-bottom:0}
+.fi{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.fi-g{background:rgba(22,163,74,.15)} .fi-t{background:rgba(0,201,167,.12)}
+.fi-b{background:rgba(36,120,200,.12)} .fi-gold{background:rgba(245,158,11,.12)}
+.fi-o{background:rgba(234,88,12,.12)} .fi-p{background:rgba(124,58,237,.12)}
+.f-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:5px}
+.f-text{font-size:14px;color:rgba(255,255,255,.78);line-height:1.75}
+.hl{color:#fff;font-weight:700}
+.hl-t{color:var(--teal);font-weight:700}
+.hl-b{color:#60a5fa;font-weight:700}
+.hl-g{color:var(--gold);font-weight:700}
+
+/* CONCLUSIÓN */
+.conclusion{background:linear-gradient(135deg,rgba(0,201,167,.07),rgba(36,120,200,.05));border:1px solid rgba(0,201,167,.2);border-radius:16px;padding:28px;text-align:center}
+.conclusion h3{font-size:20px;font-weight:700;color:#fff;margin-bottom:10px}
+.conclusion p{font-size:14px;color:rgba(255,255,255,.78);line-height:1.8;max-width:700px;margin:0 auto 18px}
+.ctags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.ctag{background:rgba(0,201,167,.1);border:1px solid rgba(0,201,167,.25);color:var(--teal);border-radius:8px;padding:7px 15px;font-size:13px;font-weight:700}
+
+@media(max-width:700px){
+  .kpi-strip,.fases,.charts{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-tag">Análisis comparativo · Abril 2026</div>
+  <h1>Antezana Rivas Banina Paola vs Daniela Arnez Alanis</h1>
+  <p class="header-sub">Con estrategia de urgencia de precio (Bs 150) vs sin estrategia (Bs 99) · Vitalia+Ambulatorio · Canal de llamadas</p>
+</div>
+
+<!-- KPIs GENERALES -->
+<div class="kpi-strip">
+  <div class="kpi kt">
+    <div class="kpi-lbl">Total combinado</div>
+    <div class="kpi-val">91</div>
+    <div class="kpi-sub">suscripciones entre ambas</div>
+  </div>
+  <div class="kpi kb">
+    <div class="kpi-lbl">Ingreso combinado</div>
+    <div class="kpi-val" style="font-size:20px">Bs 10,641</div>
+    <div class="kpi-sub">Bs 117 promedio por suscripción</div>
+  </div>
+  <div class="kpi kg">
+    <div class="kpi-lbl">Ventaja Antezana</div>
+    <div class="kpi-val">+9</div>
+    <div class="kpi-sub">suscripciones más que Daniela</div>
+  </div>
+  <div class="kpi kp">
+    <div class="kpi-lbl">Ventaja ingreso</div>
+    <div class="kpi-val" style="font-size:20px">+Bs 2,523</div>
+    <div class="kpi-sub">a favor de Antezana</div>
+  </div>
+</div>
+
+<!-- TABLA COMPARATIVA PRINCIPAL -->
+<div class="cmp-table-wrap">
+  <div class="cmp-table-header">
+    <h2>📊 Comparativo detallado — indicadores clave</h2>
+    <p>Datos exactos extraídos de los registros de Abril 2026</p>
+  </div>
+  <table class="ctbl">
+    <thead>
+      <tr>
+        <th>Indicador</th>
+        <th class="th-ant">Antezana ✅ con estrategia</th>
+        <th class="th-dan">Daniela ⚪ sin estrategia</th>
+        <th>Ventaja</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Precio aplicado Fase 1</td>
+        <td class="val-ant">Bs 99</td>
+        <td class="val-dan">Bs 99</td>
+        <td style="color:var(--muted);font-family:var(--mono);text-align:right">— igual</td>
+      </tr>
+      <tr>
+        <td>Precio aplicado Fase 2</td>
+        <td class="val-ant">Bs 150</td>
+        <td class="val-dan">Bs 99</td>
+        <td class="val-win">+Bs 51/venta</td>
+      </tr>
+      <tr class="winner-row">
+        <td>Total suscripciones</td>
+        <td class="val-ant">50</td>
+        <td class="val-dan">41</td>
+        <td class="val-win">+9 Antezana</td>
+      </tr>
+      <tr>
+        <td>Fase 1 · 1 al 14 Abril</td>
+        <td class="val-ant">18</td>
+        <td class="val-dan">17</td>
+        <td class="val-win">+1 Antezana</td>
+      </tr>
+      <tr class="winner-row">
+        <td>Fase 2 · 15 al 27 Abril</td>
+        <td class="val-ant">32</td>
+        <td class="val-dan">24</td>
+        <td class="val-win">+8 Antezana</td>
+      </tr>
+      <tr>
+        <td>Crecimiento F1 → F2</td>
+        <td class="val-ant">+78%</td>
+        <td class="val-dan">+41%</td>
+        <td class="val-win">+37pp Antezana</td>
+      </tr>
+      <tr>
+        <td>Promedio / día activo F1</td>
+        <td class="val-ant">2.0</td>
+        <td class="val-dan">2.1</td>
+        <td style="color:#60a5fa;font-family:var(--mono);text-align:right;font-weight:700">+0.1 Daniela</td>
+      </tr>
+      <tr class="winner-row">
+        <td>Promedio / día activo F2</td>
+        <td class="val-ant">4.6</td>
+        <td class="val-dan">2.7</td>
+        <td class="val-win">+1.9 Antezana</td>
+      </tr>
+      <tr>
+        <td>Mejor día del mes</td>
+        <td class="val-ant">16/04 · 7 ventas</td>
+        <td class="val-dan">24/04 · 6 ventas</td>
+        <td class="val-win">Antezana</td>
+      </tr>
+      <tr>
+        <td>Días activos F2</td>
+        <td class="val-ant">7 días</td>
+        <td class="val-dan">9 días</td>
+        <td style="color:#60a5fa;font-family:var(--mono);text-align:right;font-weight:700">Daniela más días</td>
+      </tr>
+      <tr class="winner-row">
+        <td>Ingreso total generado</td>
+        <td class="val-ant">Bs 6,582</td>
+        <td class="val-dan">Bs 4,059</td>
+        <td class="val-win">+Bs 2,523 Antezana</td>
+      </tr>
+      <tr>
+        <td>Ingreso promedio / suscripción</td>
+        <td class="val-ant">Bs 132</td>
+        <td class="val-dan">Bs 99</td>
+        <td class="val-win">+Bs 33 Antezana</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Resultado global</td>
+        <td style="text-align:right;font-family:var(--mono);font-weight:700;color:var(--teal)">Ganadora en volumen e ingreso</td>
+        <td style="text-align:right;font-family:var(--mono);font-weight:700;color:#60a5fa">Alta productividad natural</td>
+        <td style="text-align:right;font-family:var(--mono);font-weight:700;color:var(--gold)">Estrategia = +62%↑ ingreso</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<!-- FASES -->
+<div class="fases">
+  <div class="fase-card">
+    <span class="fase-tag tf1">Fase 1 · 1 al 14 Abril · Bs 99 ambas</span>
+    <div class="fase-title">Condiciones iguales — línea base</div>
+    <div class="fase-sub">Ninguna aplicaba estrategia de precio · mismas condiciones</div>
+    <div class="frow"><span class="frl">Antezana</span><span class="frva">18 suscrip. · 2.0/día</span></div>
+    <div class="frow"><span class="frl">Daniela</span><span class="frvd">17 suscrip. · 2.1/día</span></div>
+    <div class="frow"><span class="frl">Diferencia volumen</span><span class="frvw">+1 Antezana</span></div>
+    <div class="frow"><span class="frl">Ingreso combinado F1</span><span style="font-family:var(--mono);font-weight:700;color:#fff">Bs 3,465</span></div>
+    <div class="winner-tag">Prácticamente empatadas</div>
+  </div>
+  <div class="fase-card">
+    <span class="fase-tag tf2">Fase 2 · 15 al 27 Abril · Estrategia diferente</span>
+    <div class="fase-title">La estrategia marca la diferencia</div>
+    <div class="fase-sub">Antezana Bs 150 con urgencia · Daniela Bs 99 sin cambio</div>
+    <div class="frow"><span class="frl">Antezana (Bs 150)</span><span class="frva">32 suscrip. · 4.6/día</span></div>
+    <div class="frow"><span class="frl">Daniela (Bs 99)</span><span class="frvd">24 suscrip. · 2.7/día</span></div>
+    <div class="frow"><span class="frl">Diferencia volumen</span><span class="frvw">+8 Antezana</span></div>
+    <div class="frow"><span class="frl">Diferencia ingreso</span><span class="frvw">+Bs 51 por cada venta</span></div>
+    <div class="winner-tag">✓ Antezana: más volumen + mayor precio</div>
+  </div>
+</div>
+
+<!-- GRÁFICOS POR DÍA -->
+<div class="charts">
+  <div class="chart-wrap">
+    <div class="chart-title">Antezana — ventas por día</div>
+    <div class="chart-sub">Verde = F2 Bs 150 · Azul = F1 Bs 99</div>
+    <div class="bar-chart" id="chart-ant"></div>
+    <div class="legend">
+      <div class="leg"><div class="leg-dot" style="background:#2478c8"></div>F1 Bs 99</div>
+      <div class="leg"><div class="leg-dot" style="background:#00c9a7"></div>F2 Bs 150 con urgencia</div>
+    </div>
+  </div>
+  <div class="chart-wrap">
+    <div class="chart-title">Daniela — ventas por día</div>
+    <div class="chart-sub">Sin cambio de precio · Bs 99 todo el mes</div>
+    <div class="bar-chart" id="chart-dan"></div>
+    <div class="legend">
+      <div class="leg"><div class="leg-dot" style="background:#3b82f6"></div>F1 Bs 99</div>
+      <div class="leg"><div class="leg-dot" style="background:#38bdf8"></div>F2 Bs 99 (sin estrategia)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ANÁLISIS -->
+<div class="analisis">
+  <div class="an-head">
+    <h2>📋 Análisis del comportamiento comparado</h2>
+    <p>¿Qué nos dicen los datos sobre el impacto real de la estrategia de precio?</p>
+  </div>
+  <div class="an-body">
+
+    <div class="finding">
+      <div class="fi fi-t">🎯</div>
+      <div>
+        <div class="f-title">En Fase 1 estaban casi empatadas — la estrategia fue el factor decisivo</div>
+        <div class="f-text">Con el mismo precio (Bs 99) y sin ninguna táctica de urgencia, <span class="hl-t">Antezana logró 18</span> y <span class="hl-b">Daniela 17</span> — diferencia de solo 1 suscripción. Esto confirma que ambas tienen una <span class="hl">capacidad de venta similar en condiciones base</span>. La brecha se abrió únicamente cuando Antezana aplicó la estrategia de precio en Fase 2.</div>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fi fi-gold">📈</div>
+      <div>
+        <div class="f-title">La estrategia multiplicó la efectividad por día: 4.6 vs 2.7 ventas</div>
+        <div class="f-text">En Fase 2, <span class="hl-t">Antezana promedió 4.6 ventas por día activo</span> vs <span class="hl-b">2.7 de Daniela</span>. A pesar de que Daniela tuvo 2 días activos más (9 vs 7), Antezana captó <span class="hl">8 suscripciones más</span>. El mensaje "comprá hoy porque en mayo sube" generó una decisión de compra más rápida y concentrada en menos días.</div>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fi fi-g">💰</div>
+      <div>
+        <div class="f-title">Antezana generó Bs 2,523 más que Daniela — con solo 9 suscripciones más</div>
+        <div class="f-text">La diferencia de ingreso de <span class="hl-g">+Bs 2,523</span> se explica por dos factores combinados: <span class="hl">(1)</span> mayor volumen (+9 suscripciones) y <span class="hl">(2)</span> mayor precio por unidad en F2 (+Bs 51 por cada venta). Si Daniela hubiera vendido sus 24 de F2 a Bs 150, habría generado Bs 1,224 adicionales y el ingreso de ambas estaría mucho más parejo.</div>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fi fi-b">🔬</div>
+      <div>
+        <div class="f-title">Daniela también creció en F2 (+41%) — pero el efecto fue menor sin la táctica</div>
+        <div class="f-text">Daniela pasó de 17 a 24 suscripciones en Fase 2 sin ningún cambio de precio. Ese crecimiento del <span class="hl-b">+41%</span> sugiere que factores externos también influyen — mayor flujo de pacientes en la segunda quincena, efecto del ambiente general del equipo. Sin embargo, el crecimiento de <span class="hl-t">Antezana fue del +78%</span> — casi el doble — gracias a la urgencia de compra.</div>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fi fi-p">🚀</div>
+      <div>
+        <div class="f-title">Si Daniela aplica la misma estrategia en Mayo — proyección del impacto</div>
+        <div class="f-text">Con la tasa de conversión de Daniela en F2 (2.7/día) y aplicando el mismo crecimiento que provocó la estrategia en Antezana (+78%), Daniela podría alcanzar <span class="hl">29–32 suscripciones a Bs 150</span> en Mayo, generando entre <span class="hl-g">Bs 4,350–4,800</span>. Sumado a lo que generaría Antezana, el canal de llamadas podría superar <span class="hl">Bs 13,000 en un solo mes</span>.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CONCLUSIÓN -->
+<div class="conclusion">
+  <h3>Conclusión · El experimento fue exitoso</h3>
+  <p>Los datos confirman que <strong style="color:var(--teal)">la estrategia de urgencia de precio funciona</strong> — no solo sube el ingreso por suscripción, sino que también <strong style="color:#fff">aumenta el volumen de ventas</strong>. En Fase 1 ambas estaban empatadas. En Fase 2, la estrategia de Antezana generó el doble de crecimiento. La recomendación para Mayo es que <strong style="color:var(--gold)">Daniela también aplique la misma táctica</strong> para maximizar el resultado del canal.</p>
+  <div class="ctags">
+    <div class="ctag">✅ Daniela aplica Bs 150 en Mayo</div>
+    <div class="ctag">📞 Mantener urgencia de compra</div>
+    <div class="ctag">🎯 Meta combinada Mayo: +90 suscrip.</div>
+    <div class="ctag">💰 Potencial Bs 13,000+ en Mayo</div>
+  </div>
+</div>
+
+</div>
+
+<script>
+const datosAnt={1:2,2:1,6:1,7:3,8:6,9:2,11:1,12:1,14:1,15:4,16:7,18:3,20:4,21:5,22:6,27:3};
+const datosDan={1:2,2:3,6:2,7:3,8:1,10:1,13:4,14:1,15:1,16:2,17:2,18:2,20:5,21:1,22:2,23:3,24:6};
+
+function buildChart(cid, datos, c1, c2, maxD){
+  const el=document.getElementById(cid);
+  const maxV=Math.max(...Object.values(datos));
+  const H=100;
+  for(let d=1;d<=maxD;d++){
+    const n=datos[d]||0;
+    const isF2=d>=15;
+    const h=n>0?Math.round(n/maxV*H):2;
+    const col=document.createElement('div');
+    col.className='bc';
+    col.innerHTML=`
+      <div class="bv" style="color:${n===0?'rgba(255,255,255,.12)':isF2?c2:c1}">${n>0?n:''}</div>
+      <div class="bf" style="height:${h}px;background:${n===0?'#1e3048':isF2?c2:c1};opacity:${n===0?.3:1}"></div>
+      <div class="bl">${d}</div>`;
+    el.appendChild(col);
+    if(d===14){const s=document.createElement('div');s.className='sep-v';el.appendChild(s);}
+  }
+}
+buildChart('chart-ant',datosAnt,'#2478c8','#00c9a7',27);
+buildChart('chart-dan',datosDan,'#3b82f6','#38bdf8',24);
+</script>
+</body>
+</html>
